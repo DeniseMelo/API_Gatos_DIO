@@ -1,5 +1,5 @@
-const BASE_URL = ' https://api.thecatapi.com/v1/images/search/';
-
+const BASE_URL = ' https://api.thecatapi.com/v1/images/search';
+const catBtn = document.getElementById('change-cat')
 const getCats = async () => {
 	try {
 		const data = await fetch(BASE_URL);
@@ -10,12 +10,12 @@ const getCats = async () => {
 	}
 };
 
+
 const loadImg = async () => {
-	const img = document.getElementsByTagName('img')[0];
-	img.src = await getCats();
+	const catImg = document.getElementById('cat');
+	catImg.src = await getCats();
 };
 
-loadImg();
+catBtn.addEventListener('click',loadImg);
 
-const btn = document.getElementById('change-cat');
-btn.addEventListener('click', loadImg);
+loadImg();
