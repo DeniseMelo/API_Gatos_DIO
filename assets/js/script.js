@@ -1,13 +1,13 @@
-const BASE_URL = ' https://api.thecatapi.com/v1/images/search';
+const BASE_URL = ' https://thatcopy.pw/catapi/rest/';
 const catBtn = document.getElementById('change-cat')
+
 const getCats = async () => {
-	try {
-		const data = await fetch(BASE_URL);
-		const json = await data.json();
-		return json;
-	} catch (e) {
-		console.log(e.message);
-	}
+	
+		const data = await fetch(BASE_URL)
+		.then((res) => res.json())
+		.catch((e) => console.log(e));
+		return data;
+		
 };
 
 
