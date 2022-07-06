@@ -21,3 +21,4 @@ const loadImg = async () => {
 catBtn.addEventListener('click',loadImg, alert('Não continue se não gosta de fofurices'));
 
 loadImg();
+
